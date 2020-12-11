@@ -1,0 +1,1040 @@
+<ArrayOfExchangeRatesTable xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>214/C/NBP/2020</No>
+        <TradingDate>2020-10-30</TradingDate>
+        <EffectiveDate>2020-11-02</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.9225</Bid>
+                <Ask>4.0017</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7577</Bid>
+                <Ask>2.8135</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.9408</Bid>
+                <Ask>3.0002</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.5804</Bid>
+                <Ask>4.6730</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012464</Bid>
+                <Ask>0.012716</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.2838</Bid>
+                <Ask>4.3704</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>5.0736</Bid>
+                <Ask>5.1760</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.037483</Bid>
+                <Ask>0.038241</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1676</Bid>
+                <Ask>0.1710</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.6153</Bid>
+                <Ask>0.6277</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4116</Bid>
+                <Ask>0.4200</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4411</Bid>
+                <Ask>0.4501</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.5259</Bid>
+                <Ask>5.6375</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        ...
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        ...
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>217/C/NBP/2020</No>
+        <TradingDate>2020-11-04</TradingDate>
+        <EffectiveDate>2020-11-05</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.8528</Bid>
+                <Ask>3.9306</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7570</Bid>
+                <Ask>2.8126</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.9225</Bid>
+                <Ask>2.9815</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.5116</Bid>
+                <Ask>4.6028</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012404</Bid>
+                <Ask>0.012654</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.2233</Bid>
+                <Ask>4.3087</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>5.0062</Bid>
+                <Ask>5.1074</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.036908</Bid>
+                <Ask>0.037654</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1677</Bid>
+                <Ask>0.1711</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.6059</Bid>
+                <Ask>0.6181</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4119</Bid>
+                <Ask>0.4203</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4366</Bid>
+                <Ask>0.4454</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.4472</Bid>
+                <Ask>5.5572</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>218/C/NBP/2020</No>
+        <TradingDate>2020-11-05</TradingDate>
+        <EffectiveDate>2020-11-06</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7853</Bid>
+                <Ask>3.8617</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7444</Bid>
+                <Ask>2.7998</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.9018</Bid>
+                <Ask>2.9604</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4774</Bid>
+                <Ask>4.5678</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012468</Bid>
+                <Ask>0.01272</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1776</Bid>
+                <Ask>4.2620</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9540</Bid>
+                <Ask>5.0540</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.036516</Bid>
+                <Ask>0.037254</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1681</Bid>
+                <Ask>0.1715</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.6012</Bid>
+                <Ask>0.6134</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4120</Bid>
+                <Ask>0.4204</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4353</Bid>
+                <Ask>0.4441</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3992</Bid>
+                <Ask>5.5082</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>219/C/NBP/2020</No>
+        <TradingDate>2020-11-06</TradingDate>
+        <EffectiveDate>2020-11-09</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7796</Bid>
+                <Ask>3.8560</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7408</Bid>
+                <Ask>2.7962</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8929</Bid>
+                <Ask>2.9513</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4830</Bid>
+                <Ask>4.5736</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012482</Bid>
+                <Ask>0.012734</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1926</Bid>
+                <Ask>4.2774</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9555</Bid>
+                <Ask>5.0557</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.036491</Bid>
+                <Ask>0.037229</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1680</Bid>
+                <Ask>0.1714</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.6017</Bid>
+                <Ask>0.6139</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4113</Bid>
+                <Ask>0.4197</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4362</Bid>
+                <Ask>0.4450</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3684</Bid>
+                <Ask>5.4768</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>220/C/NBP/2020</No>
+        <TradingDate>2020-11-09</TradingDate>
+        <EffectiveDate>2020-11-10</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7438</Bid>
+                <Ask>3.8194</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7326</Bid>
+                <Ask>2.7878</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8891</Bid>
+                <Ask>2.9475</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4412</Bid>
+                <Ask>4.5310</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012377</Bid>
+                <Ask>0.012627</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1209</Bid>
+                <Ask>4.2041</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9270</Bid>
+                <Ask>5.0266</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.035541</Bid>
+                <Ask>0.036259</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1674</Bid>
+                <Ask>0.1708</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5964</Bid>
+                <Ask>0.6084</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4149</Bid>
+                <Ask>0.4233</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4345</Bid>
+                <Ask>0.4433</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3292</Bid>
+                <Ask>5.4368</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>221/C/NBP/2020</No>
+        <TradingDate>2020-11-10</TradingDate>
+        <EffectiveDate>2020-11-12</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7716</Bid>
+                <Ask>3.8478</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7381</Bid>
+                <Ask>2.7935</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8958</Bid>
+                <Ask>2.9544</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4554</Bid>
+                <Ask>4.5454</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012489</Bid>
+                <Ask>0.012741</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1210</Bid>
+                <Ask>4.2042</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9993</Bid>
+                <Ask>5.1003</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.035781</Bid>
+                <Ask>0.036503</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1684</Bid>
+                <Ask>0.1718</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5985</Bid>
+                <Ask>0.6105</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4187</Bid>
+                <Ask>0.4271</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4375</Bid>
+                <Ask>0.4463</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3425</Bid>
+                <Ask>5.4505</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>222/C/NBP/2020</No>
+        <TradingDate>2020-11-12</TradingDate>
+        <EffectiveDate>2020-11-13</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7638</Bid>
+                <Ask>3.8398</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7315</Bid>
+                <Ask>2.7867</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8655</Bid>
+                <Ask>2.9233</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4401</Bid>
+                <Ask>4.5299</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012533</Bid>
+                <Ask>0.012787</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1148</Bid>
+                <Ask>4.1980</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9511</Bid>
+                <Ask>5.0511</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.03575</Bid>
+                <Ask>0.036472</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1676</Bid>
+                <Ask>0.1710</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5963</Bid>
+                <Ask>0.6083</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4138</Bid>
+                <Ask>0.4222</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4369</Bid>
+                <Ask>0.4457</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3515</Bid>
+                <Ask>5.4597</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>223/C/NBP/2020</No>
+        <TradingDate>2020-11-13</TradingDate>
+        <EffectiveDate>2020-11-16</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7592</Bid>
+                <Ask>3.8352</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7251</Bid>
+                <Ask>2.7801</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8615</Bid>
+                <Ask>2.9193</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4423</Bid>
+                <Ask>4.5321</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012489</Bid>
+                <Ask>0.012741</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1138</Bid>
+                <Ask>4.1970</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9474</Bid>
+                <Ask>5.0474</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.035882</Bid>
+                <Ask>0.036606</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1680</Bid>
+                <Ask>0.1714</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5965</Bid>
+                <Ask>0.6085</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4109</Bid>
+                <Ask>0.4193</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4330</Bid>
+                <Ask>0.4418</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3465</Bid>
+                <Ask>5.4545</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>224/C/NBP/2020</No>
+        <TradingDate>2020-11-16</TradingDate>
+        <EffectiveDate>2020-11-17</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7494</Bid>
+                <Ask>3.8252</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7354</Bid>
+                <Ask>2.7906</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8651</Bid>
+                <Ask>2.9229</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4344</Bid>
+                <Ask>4.5240</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012345</Bid>
+                <Ask>0.012595</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1053</Bid>
+                <Ask>4.1883</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9431</Bid>
+                <Ask>5.0429</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.035847</Bid>
+                <Ask>0.036571</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1680</Bid>
+                <Ask>0.1714</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5955</Bid>
+                <Ask>0.6075</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4125</Bid>
+                <Ask>0.4209</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4331</Bid>
+                <Ask>0.4419</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3289</Bid>
+                <Ask>5.4365</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>225/C/NBP/2020</No>
+        <TradingDate>2020-11-17</TradingDate>
+        <EffectiveDate>2020-11-18</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7525</Bid>
+                <Ask>3.8283</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7365</Bid>
+                <Ask>2.7917</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8657</Bid>
+                <Ask>2.9235</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4548</Bid>
+                <Ask>4.5448</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012311</Bid>
+                <Ask>0.012559</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1224</Bid>
+                <Ask>4.2056</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9744</Bid>
+                <Ask>5.0748</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.036051</Bid>
+                <Ask>0.036779</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1679</Bid>
+                <Ask>0.1713</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5982</Bid>
+                <Ask>0.6102</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4140</Bid>
+                <Ask>0.4224</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4355</Bid>
+                <Ask>0.4443</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3530</Bid>
+                <Ask>5.4612</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>226/C/NBP/2020</No>
+        <TradingDate>2020-11-18</TradingDate>
+        <EffectiveDate>2020-11-19</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7311</Bid>
+                <Ask>3.8065</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7260</Bid>
+                <Ask>2.7810</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8514</Bid>
+                <Ask>2.9090</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4272</Bid>
+                <Ask>4.5166</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012278</Bid>
+                <Ask>0.012526</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.0945</Bid>
+                <Ask>4.1773</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9599</Bid>
+                <Ask>5.0601</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.035922</Bid>
+                <Ask>0.036648</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1679</Bid>
+                <Ask>0.1713</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5941</Bid>
+                <Ask>0.6061</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4131</Bid>
+                <Ask>0.4215</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4335</Bid>
+                <Ask>0.4423</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3109</Bid>
+                <Ask>5.4181</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+    <ExchangeRatesTable>
+        <Table>C</Table>
+        <No>227/C/NBP/2020</No>
+        <TradingDate>2020-11-19</TradingDate>
+        <EffectiveDate>2020-11-20</EffectiveDate>
+        <Rates>
+            <Rate>
+                <Currency>dolar amerykański</Currency>
+                <Code>USD</Code>
+                <Bid>3.7429</Bid>
+                <Ask>3.8185</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar australijski</Currency>
+                <Code>AUD</Code>
+                <Bid>2.7214</Bid>
+                <Ask>2.7764</Ask>
+            </Rate>
+            <Rate>
+                <Currency>dolar kanadyjski</Currency>
+                <Code>CAD</Code>
+                <Bid>2.8582</Bid>
+                <Ask>2.9160</Ask>
+            </Rate>
+            <Rate>
+                <Currency>euro</Currency>
+                <Code>EUR</Code>
+                <Bid>4.4282</Bid>
+                <Ask>4.5176</Ask>
+            </Rate>
+            <Rate>
+                <Currency>forint (Węgry)</Currency>
+                <Code>HUF</Code>
+                <Bid>0.012286</Bid>
+                <Ask>0.012534</Ask>
+            </Rate>
+            <Rate>
+                <Currency>frank szwajcarski</Currency>
+                <Code>CHF</Code>
+                <Bid>4.1007</Bid>
+                <Ask>4.1835</Ask>
+            </Rate>
+            <Rate>
+                <Currency>funt szterling</Currency>
+                <Code>GBP</Code>
+                <Bid>4.9482</Bid>
+                <Ask>5.0482</Ask>
+            </Rate>
+            <Rate>
+                <Currency>jen (Japonia)</Currency>
+                <Code>JPY</Code>
+                <Bid>0.035992</Bid>
+                <Ask>0.03672</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona czeska</Currency>
+                <Code>CZK</Code>
+                <Bid>0.1680</Bid>
+                <Ask>0.1714</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona duńska</Currency>
+                <Code>DKK</Code>
+                <Bid>0.5943</Bid>
+                <Ask>0.6063</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona norweska</Currency>
+                <Code>NOK</Code>
+                <Bid>0.4142</Bid>
+                <Ask>0.4226</Ask>
+            </Rate>
+            <Rate>
+                <Currency>korona szwedzka</Currency>
+                <Code>SEK</Code>
+                <Bid>0.4336</Bid>
+                <Ask>0.4424</Ask>
+            </Rate>
+            <Rate>
+                <Currency>SDR (MFW)</Currency>
+                <Code>XDR</Code>
+                <Bid>5.3193</Bid>
+                <Ask>5.4267</Ask>
+            </Rate>
+        </Rates>
+    </ExchangeRatesTable>
+</ArrayOfExchangeRatesTable>
