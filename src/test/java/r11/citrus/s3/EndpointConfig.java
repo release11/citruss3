@@ -24,7 +24,7 @@ public class EndpointConfig {
     }
 
     @Bean
-    public S3Endpoint s3Endpoint() throws URISyntaxException {
+    public S3Endpoint s3Endpoint() {
         return S3Endpoint.builder()
                 .endpointUri("http://localhost:8001")
                 .region("eu-north-1")
