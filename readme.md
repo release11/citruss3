@@ -14,7 +14,7 @@
 
 Maven
 ```xml
-<groupId>com.release11</groupId >
+<groupId>com.release11</groupId>
 <artifactId>citrus-s3</artifactId>
 <version>1.0.0</version>
 ```
@@ -62,12 +62,12 @@ public void testCitrusS3Example(){
 
 ```java
 public S3Endpoint s3Endpoint() {
-return S3Endpoint. builder ()
-.endpointUri( "http://localhost:4566" )
-.region( "EUNORTH1" )
-.accessKey( "MyAccessKey" )
-.secretKey( "MyS3cr3tK3y" )
-.build();
+	return S3Endpoint.builder()
+		.endpointUri("http://localhost:4566")
+		.region("EU_NORTH_1")
+		.accessKey("MyAccessKey")
+		.secretKey("MyS3cr3tK3y")
+		.build();
 }
 ```
 
@@ -81,11 +81,11 @@ return S3Endpoint. builder ()
  we want to perfom, destination bucket and the key – which is basically file path inside the bucket.
 
 ```java
-S3Message helloMessage = S3Message. builder ()
-.method(S3RequestType. PUT )
-.bucket( "MyBucket" )
-.key( "FirstCitrusTest/HelloWorld.txt" )
-.build();
+S3Message helloMessage = S3Message.builder()
+	.method(S3RequestType.PUT)
+	.bucket("MyBucket")
+	.key("FirstCitrusTest/HelloWorld.txt")
+	.build();
 ```
 
  The role of the object is to contain data about the destination. Content is held in payload field initialized by
@@ -99,24 +99,25 @@ S3Message helloMessage = S3Message. builder ()
 ```java
 @Test
 public class CitrusSyntaxExample extends TestNGCitrusTestRunner {
-@Autowired
-S3Endpoint s3Endpoint ;
-@CitrusTest
-public void testSendMessageOperation(){
-S3Message helloMessage = S3Message. builder ()
-.method(S3RequestType. PUT )
-.bucket( "MyBucket" )
-.key( "FirstCitrusTest/HelloCitrus.txt" )
-.build();
-send(builder -> builder.endpoint( s3Endpoint )
-.message(helloMessage)
-.payload( "Hello Citrus!" )
-.build()
-);
-receive(builder -> builder.endpoint( s3Endpoint )
-.payload(S3EndpointResponse. PUTOBJECTSUCCESS )
-);
-}
+	@Autowired
+	S3Endpoint s3Endpoint;
+	
+	@CitrusTest
+	public void testSendMessageOperation(){
+		S3Message helloMessage = S3Message.builder()
+			.method(S3RequestType.PUT)
+			.bucket("MyBucket")
+			.key("FirstCitrusTest/HelloCitrus.txt")
+			.build();
+		send(builder -> builder.endpoint(s3Endpoint)
+			.message(helloMessage)
+			.payload("Hello Citrus!")
+			.build()
+		);
+		receive(builder -> builder.endpoint(s3Endpoint)
+			.payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
+		);
+	}
 }
 ```
 
@@ -131,24 +132,25 @@ receive(builder -> builder.endpoint( s3Endpoint )
 ```java
 @Test
 public class CitrusSyntaxExample extends TestNGCitrusTestRunner {
-@Autowired
-S3Endpoint s3Endpoint ;
-@CitrusTest
-public void testGetMessageOperation(){
-//Get file
-S3Message helloS3Message = S3Message. builder ()
-.method(S3RequestType. GET )
-.bucket( "MyBucket" )
-.key( "FirstCitrusTest/HelloCitrus.txt" )
-.build();
-send(builder -> builder.endpoint( s3Endpoint )
-.message(helloS3Message)
-.build()
-);
-receive(builder -> builder.endpoint( s3Endpoint )
-.payload( "Hello Citrus!" )
-);
-}
+	@Autowired
+	S3Endpoint s3Endpoint;
+	
+	@CitrusTest
+	public void testGetMessageOperation(){
+		//Get file
+		S3Message helloS3Message = S3Message.builder()
+			.method(S3RequestType.GET)
+			.bucket("MyBucket")
+			.key("FirstCitrusTest/HelloCitrus.txt")
+			.build();
+		send(builder -> builder.endpoint(s3Endpoint)
+			.message(helloS3Message)
+			.build()
+		);
+		receive(builder -> builder.endpoint(s3Endpoint)
+			.payload("Hello Citrus!")
+		);
+	}
 }
 ```
 
@@ -162,25 +164,25 @@ receive(builder -> builder.endpoint( s3Endpoint )
 ```java
 @Test
 public class CitrusSyntaxExample extends TestNGCitrusTestRunner {
-@Autowired
-S3Endpoint s3Endpoint ;
-@CitrusTest
-public void testGetMessageOperation(){
-//Get file
-S3Message helloS3Message = S3Message. builder ()
-.method(S3RequestType. DELETE )
-.bucket( "MyBucket" )
-.key( "FirstCitrusTest/HelloCitrus.txt" )
-.build();
-send(builder -> builder.endpoint( s3Endpoint )
-.message(helloS3Message)
-.build()
-);
-receive(builder -> builder.endpoint( s3Endpoint )
-.payload(S3EndpointResponse. DELETEOBJECTSUCCESS )
-);
-}
-
+	@Autowired
+	S3Endpoint s3Endpoint;
+	
+	@CitrusTest
+	public void testGetMessageOperation(){
+		//Get file
+		S3Message helloS3Message = S3Message.builder()
+			.method(S3RequestType.DELETE)
+			.bucket("MyBucket")
+			.key("FirstCitrusTest/HelloCitrus.txt")
+			.build();
+		send(builder -> builder.endpoint(s3Endpoint)
+			.message(helloS3Message)
+			.build()
+		);
+		receive(builder -> builder.endpoint(s3Endpoint)
+			.payload(S3EndpointResponse.DELETE_OBJECT_SUCCESS)
+		);
+	}
 }
 ```
 
