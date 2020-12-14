@@ -33,7 +33,7 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
         );
-        s3AbstractHost.deleteObject(bucket, key);
+//        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
     }
 
@@ -54,7 +54,7 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
                 .validator(new BinaryMessageValidator())
                 .payload(testValue)
         );
-        s3AbstractHost.deleteObject(bucket, key);
+//        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
     }
 
