@@ -6,7 +6,7 @@ import com.consol.citrus.validation.binary.BinaryMessageValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
-@Test(priority = 20, testName = "AdvTest")
+@Test(testName = "AdvancedOperation")
 public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     @Autowired
     private S3Endpoint s3Endpoint;
@@ -18,7 +18,6 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     private final String testValue = "testValue";
 
     @CitrusTest
-    @Test(priority = 21)
     public void createBucketAndUploadTest() {
         //Put request message
         S3Message m1 = S3Message.builder().bucket(bucket).key(key).method(S3RequestType.PUT_BUCKET_CREATE).build();
@@ -36,13 +35,9 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
         );
         s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
-
-
     }
 
-
     @CitrusTest
-    @Test(priority = 22)
     public void getFileAndDeleteTest() {
         s3AbstractHost.createBucket(bucket);
         //Get request message
@@ -61,11 +56,9 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
         );
         s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
-
     }
 
     @CitrusTest
-    @Test(priority = 23)
     public void deleteBucketTest() {
         s3AbstractHost.createBucket(bucket);
         //Get request message
@@ -84,5 +77,4 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
         s3AbstractHost.deleteBucket(bucket);
 
     }
-
 }

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-@Test(priority = 10, testName = "BasicTest")
+@Test(testName = "BasicOperation")
 public class BasicOperationTests extends TestNGCitrusTestRunner {
     @Autowired
     private S3Endpoint s3Endpoint;
@@ -19,7 +19,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     private final String testValue = "testValue";
 
     @CitrusTest
-    @Test(priority = 11)
     public void createBucketTest() {
         //Put request message
         S3Message m1 = S3Message.builder().bucket(bucket).method(S3RequestType.CREATE_BUCKET).build();
@@ -41,7 +40,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
 
 
     @CitrusTest
-    @Test(priority = 12)
     public void putFileTest() {
         s3AbstractHost.createBucket(bucket);
         //Put request message
@@ -64,7 +62,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     }
 
     @CitrusTest
-    @Test(priority = 13)
     public void getFileTest() throws IOException {
         s3AbstractHost.createBucket(bucket);
         s3AbstractHost.createObject(bucket, key, "Hello world!");
@@ -88,7 +85,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     }
 
     @CitrusTest
-    @Test(priority = 14)
     public void deleteFileTest() throws IOException {
         s3AbstractHost.createBucket(bucket);
         s3AbstractHost.createObject(bucket, key, "Hello world!");
@@ -111,7 +107,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     }
 
     @CitrusTest
-    @Test(priority = 15)
     public void deleteBucketTest() {
         s3AbstractHost.createBucket(bucket);
         //Get request message
