@@ -19,9 +19,7 @@ Maven
 <version>1.0.0</version>
 ```
 
-There is no such item in mvnrepository.com, so first we need to clone the content of this repository and install it into local maven repo using
-
-command:
+There is no such item in mvnrepository.com, so first we need to clone the content of this repository and install it into local maven repo using command:
 ```
 mvn install
 ```
