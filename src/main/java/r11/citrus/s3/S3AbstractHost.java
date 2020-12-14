@@ -66,6 +66,10 @@ public class S3AbstractHost {
         this.blobStore.deleteContainer(bucket);
     }
 
+    public void clearBucket(String bucket){
+        this.blobStore.clearContainer(bucket);
+    }
+
     public void createObject(String bucket, String key, Object object) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
@@ -80,5 +84,5 @@ public class S3AbstractHost {
     public void deleteObject(String bucket, String key){
         this.blobStore.removeBlob(bucket, key);
     }
-
+    
 }
