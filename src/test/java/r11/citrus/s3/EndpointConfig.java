@@ -27,7 +27,7 @@ public class EndpointConfig {
     public S3Endpoint s3Endpoint() throws URISyntaxException {
         return S3Endpoint.builder()
                 .endpointUri("http://localhost:8001")
-                .region("us-east-1")
+                .region("eu-north-1")
                 .accessKey("1234")
                 .secretKey("1234")
                 .build();
