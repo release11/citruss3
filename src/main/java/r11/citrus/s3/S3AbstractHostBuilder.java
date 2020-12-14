@@ -52,12 +52,12 @@ public class S3AbstractHostBuilder {
         return this;
     }
 
-    public S3AbstractHostBuilder accessKey(){
+    public S3AbstractHostBuilder accessKey(String accessKey){
         this.accessKey = accessKey;
         return this;
     }
 
-    public S3AbstractHostBuilder secretKey(){
+    public S3AbstractHostBuilder secretKey(String secretKey){
         this.secretKey = secretKey;
         return this;
     }

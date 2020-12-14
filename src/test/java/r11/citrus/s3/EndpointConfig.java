@@ -11,6 +11,17 @@ import java.net.URISyntaxException;
 
 @Configuration
 public class EndpointConfig {
+    @Bean
+    public S3AbstractHost s3AbstractHost(){
+        return S3AbstractHost.builder()
+                .service("filesystem")
+                .region("eu-north-1")
+                .host("http://localhost:8001")
+                .accessKey("1234")
+                .secretKey("1234")
+                .localBlobPath("/tmp/blobstore")
+                .build();
+    }
 
     @Bean
     public S3Endpoint s3Endpoint() throws URISyntaxException {
