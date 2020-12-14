@@ -12,7 +12,6 @@ each of request type.
 Citrus is the java framework for creating end-to-end tests for integration. For it to run we need TestNG and
 Citrus core dependencies. All required dependencies are included in Release11 library.
 
-Maven
 ```xml
 <groupId>com.release11</groupId>
 <artifactId>citrus-s3</artifactId>
