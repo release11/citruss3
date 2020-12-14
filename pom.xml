@@ -103,6 +103,26 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.gaul/s3proxy -->
+        <dependency>
+            <groupId>org.gaul</groupId>
+            <artifactId>s3proxy</artifactId>
+            <version>1.7.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jclouds</groupId>
+            <artifactId>jclouds-blobstore</artifactId>
+            <version>2.2.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gaul</groupId>
+            <artifactId>s3proxy</artifactId>
+            <version>1.7.1</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 
