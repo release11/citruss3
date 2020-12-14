@@ -66,7 +66,7 @@ public class S3AbstractHost {
         this.blobStore.deleteContainer(bucket);
     }
 
-    public void addObject(String bucket, String key, Object object) throws IOException {
+    public void createObject(String bucket, String key, Object object) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(object);
@@ -77,7 +77,7 @@ public class S3AbstractHost {
         this.blobStore.putBlob(bucket, blob);
     }
 
-    public void removeObject(String bucket, String key){
+    public void deleteObject(String bucket, String key){
         this.blobStore.removeBlob(bucket, key);
     }
 

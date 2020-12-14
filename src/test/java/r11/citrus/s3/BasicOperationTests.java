@@ -58,7 +58,7 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
         );
-        s3AbstractHost.removeObject(bucket, key);
+        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
 
     }
@@ -67,7 +67,7 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     @Test(priority = 13)
     public void getFileTest() throws IOException {
         s3AbstractHost.createBucket(bucket);
-        s3AbstractHost.addObject(bucket, key, "Hello world!");
+        s3AbstractHost.createObject(bucket, key, "Hello world!");
         //Get request message
         S3Message m2 = S3Message.builder().bucket(bucket).key(key).method(S3RequestType.GET).build();
 
@@ -82,7 +82,7 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
                 .validator(new BinaryMessageValidator())
                 .payload(testValue)
         );
-        s3AbstractHost.removeObject(bucket, key);
+        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
 
     }
@@ -91,7 +91,7 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     @Test(priority = 14)
     public void deleteFileTest() throws IOException {
         s3AbstractHost.createBucket(bucket);
-        s3AbstractHost.addObject(bucket, key, "Hello world!");
+        s3AbstractHost.createObject(bucket, key, "Hello world!");
         //Delete object request
         S3Message m3 = S3Message.builder().bucket(bucket).key(key).method(S3RequestType.DELETE).build();
 
@@ -105,7 +105,7 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.DELETE_OBJECT_SUCCESS)
         );
-        s3AbstractHost.removeObject(bucket, key);
+        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
 
     }
