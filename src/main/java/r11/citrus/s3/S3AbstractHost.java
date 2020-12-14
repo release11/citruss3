@@ -5,7 +5,9 @@ import org.gaul.shaded.org.eclipse.jetty.util.component.AbstractLifeCycle;
 import org.jclouds.ContextBuilder;
 import org.jclouds.blobstore.BlobStore;
 import org.jclouds.blobstore.BlobStoreContext;
+import org.jclouds.blobstore.domain.Blob;
 
+import java.io.*;
 import java.net.URI;
 import java.util.Properties;
 
@@ -55,4 +57,28 @@ public class S3AbstractHost {
     public S3Proxy getServer() {
         return server;
     }
+
+    public void createBucket(String bucket){
+        this.blobStore.createContainerInLocation(null, bucket);
+    }
+
+    public void deleteBucket(String bucket){
+        this.blobStore.deleteContainer(bucket);
+    }
+
+    public void addObject(String bucket, String key, Object object) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(object);
+        oos.flush();
+        oos.close();
+        InputStream is = new ByteArrayInputStream(baos.toByteArray());
+        Blob blob = this.blobStore.blobBuilder(key).payload(is).build();
+        this.blobStore.putBlob(bucket, blob);
+    }
+
+    public void removeObject(String bucket, String key){
+        this.blobStore.removeBlob(bucket, key);
+    }
+
 }
