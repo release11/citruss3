@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     @Autowired
     private S3Endpoint s3Endpoint;
+    @Autowired
+    private S3AbstractHost s3AbstractHost;
 
     private final String bucket = "testbucket1";
     private final String key = "log.txt";
@@ -32,6 +34,9 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
         );
+        s3AbstractHost.removeObject(bucket, key);
+        s3AbstractHost.deleteBucket(bucket);
+
 
     }
 
@@ -39,6 +44,7 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     @CitrusTest
     @Test(priority = 22)
     public void getFileAndDeleteTest() {
+        s3AbstractHost.createBucket(bucket);
         //Get request message
         S3Message m2 = S3Message.builder().bucket(bucket).key(key).method(S3RequestType.GET_DELETE).build();
 
@@ -53,12 +59,15 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
                 .validator(new BinaryMessageValidator())
                 .payload(testValue)
         );
+        s3AbstractHost.removeObject(bucket, key);
+        s3AbstractHost.deleteBucket(bucket);
 
     }
 
     @CitrusTest
     @Test(priority = 23)
     public void deleteBucketTest() {
+        s3AbstractHost.createBucket(bucket);
         //Get request message
         S3Message m2 = S3Message.builder().bucket(bucket).method(S3RequestType.DELETE_BUCKET).build();
 
@@ -72,6 +81,7 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.DELETE_BUCKET_SUCCESS)
         );
+        s3AbstractHost.deleteBucket(bucket);
 
     }
 
