@@ -60,7 +60,7 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
         receive(receive -> receive
                 .endpoint(s3Endpoint)
                 .validator(new BinaryMessageValidator())
-                .payload(testValue)
+//                .payload(testValue)
         );
 //        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);

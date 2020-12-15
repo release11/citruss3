@@ -35,6 +35,7 @@ public class S3AbstractHost {
         this.server = S3Proxy.builder()
                 .blobStore(this.blobStore)
                 .endpoint(URI.create(builder.getHost()))
+                .ignoreUnknownHeaders(true)
                 .build();
     }
 
