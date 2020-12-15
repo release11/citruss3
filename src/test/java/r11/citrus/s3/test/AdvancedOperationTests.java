@@ -12,6 +12,7 @@ import r11.citrus.s3.S3RequestType;
 import r11.citrus.s3.host.S3AbstractHost;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 @Test(testName = "AdvancedOperation")
 public class AdvancedOperationTests extends TestNGCitrusTestRunner {
@@ -23,6 +24,25 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     private final String bucket = "testbucket1";
     private final String key = "log.txt";
     private final String testValue = "testValue";
+
+//    STRING: testValue
+//    BYTE ARRAY:
+//    [116, 101, 115, 116, 86, 97, 108, 117, 101]
+
+
+//    GET_FILE_AND_DELETE
+//    BYTE ARRAY OF MESSAGE:
+//            [-84, -19, 0, 5, 116, 0, 9, 116, 101, 115, 116, 86, 97, 108, 117, 101]
+//
+//    STRING VALUE OF MESSAGE:
+//            ¬í t 	testValue
+
+//    GET_FILE
+//    BYTE ARRAY OF MESSAGE:
+//            [-84, -19, 0, 5, 116, 0, 9, 116, 101, 115, 116, 86, 97, 108, 117, 101]
+//
+//    STRING VALUE OF MESSAGE:
+//            ¬í t 	testValue
 
     @CitrusTest
     public void createBucketAndUploadTest() {

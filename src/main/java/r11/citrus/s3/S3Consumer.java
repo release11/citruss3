@@ -9,6 +9,7 @@ import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
 
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
@@ -50,6 +51,10 @@ public class S3Consumer implements Consumer {
             if (m.getS3Request() instanceof GetObjectRequest) {
                 ResponseBytes res = s3Endpoint.getClient().getObjectAsBytes((GetObjectRequest) m.getS3Request());
                 result.setPayload(res.asByteArray());
+                //--------------- TO REMOVE ---------------------------
+                System.out.println("BYTE ARRAY OF MESSAGE:\n"+Arrays.toString(res.asByteArray())+"\n");
+                System.out.println("STRING VALUE OF MESSAGE:\n" + new String(res.asByteArray())+"\n");
+                //-----------------------------------------------------
                 if (m.isDelete()) {
                     s3Endpoint.getClient().deleteObject(DeleteObjectRequest.builder().bucket(m.getBucket()).key(m.getKey()).build());
                 }
