@@ -1,4 +1,4 @@
-package r11.citrus.s3;
+package r11.citrus.s3.host;
 
 import org.gaul.s3proxy.S3Proxy;
 import org.gaul.shaded.org.eclipse.jetty.util.component.AbstractLifeCycle;

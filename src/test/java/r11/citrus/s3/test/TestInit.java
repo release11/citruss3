@@ -1,12 +1,9 @@
-package r11.citrus.s3;
+package r11.citrus.s3.test;
 
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
-import io.findify.s3mock.S3Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.*;
-
-import java.io.FileInputStream;
-import java.io.IOException;
+import r11.citrus.s3.host.S3AbstractHost;
 
 @Test(testName = "Initialization")
 public class TestInit extends TestNGCitrusTestRunner {

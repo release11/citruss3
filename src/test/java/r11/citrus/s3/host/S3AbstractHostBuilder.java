@@ -1,4 +1,4 @@
-package r11.citrus.s3;
+package r11.citrus.s3.host;
 
 /**
  * The instance of this class serves as builder to S3AbstractHost. It gathers all required
