@@ -6,6 +6,8 @@ import com.consol.citrus.validation.binary.BinaryMessageValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 @Test(testName = "AdvancedOperation")
 public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     @Autowired
@@ -38,8 +40,9 @@ public class AdvancedOperationTests extends TestNGCitrusTestRunner {
     }
 
     @CitrusTest
-    public void getFileAndDeleteTest() {
+    public void getFileAndDeleteTest() throws IOException {
         s3AbstractHost.createBucket(bucket);
+        s3AbstractHost.createObject(bucket, key, testValue);
         //Get request message
         S3Message m2 = S3Message.builder().bucket(bucket).key(key).method(S3RequestType.GET_DELETE).build();
 
