@@ -4,7 +4,7 @@ import com.consol.citrus.annotations.CitrusTest;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.validation.binary.BinaryMessageValidator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import r11.citrus.s3.S3Endpoint;
 import r11.citrus.s3.S3EndpointResponse;
 import r11.citrus.s3.S3Message;
@@ -23,6 +23,24 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
     private final String bucket = "testbucket1";
     private final String key = "log.txt";
     private final String testValue = "testValue";
+
+    @BeforeTest
+    void startMockS3 (){
+        try {
+            s3AbstractHost.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @AfterTest
+    void stopMockS3(){
+        try {
+            s3AbstractHost.stop();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @CitrusTest
     public void createBucketTest() {

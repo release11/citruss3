@@ -9,8 +9,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 /**
  * Objects of class are used to create Citrus Message which is fed to either Producer or Consumer.
@@ -57,13 +61,20 @@ public class S3Message extends DefaultMessage {
      * @param xml
      * @throws JAXBException
      */
-    public S3Message(String xml) throws JAXBException {
+    public S3Message(String xml) throws JAXBException, IOException {
+        System.out.println("XML:\n"+xml+"\n");
         S3MessageMarshaller messageMarshaller = new S3MessageMarshaller();
         S3Message message = messageMarshaller.unmarshal(xml);
         this.method = message.getMethod();
         this.bucket = message.getBucket();
         this.key = message.getKey();
         this.setPayload(message.getData());
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        ObjectOutputStream os = new ObjectOutputStream(out);
+        os.writeObject(message.getData());
+        byte[] res = out.toByteArray();
+        System.out.println("UNMARSHALLED STRING VALUE:\n" + new String(res) + "\n" +
+                "UNMARSHALLED BYTE ARRAY:\n" + Arrays.toString(res));
     }
 
     /**
