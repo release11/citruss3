@@ -10,7 +10,7 @@ public class S3AbstractHostBuilder {
     /** initialized with default value */
     private String region = "eu-east-1";
     /** initialized with default value */
-    private String localBlobPath = "/tmp/blobstore";
+    private String localBlobPath = "./tmp/blobstore";
     /** initialized with default value */
     private String host = "http://127.0.0.1:4566";
     private String accessKey;

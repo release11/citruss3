@@ -15,7 +15,7 @@ public class EndpointConfig {
                 .host("http://localhost:8001")
                 .accessKey("1234")
                 .secretKey("1234")
-                .localBlobPath("/tmp/blobstore")
+                .localBlobPath("./tmp/blobstore")
                 .build();
     }
 

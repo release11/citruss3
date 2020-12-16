@@ -80,7 +80,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
         );
-//        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
 
     }
@@ -101,9 +100,8 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
         receive(receive -> receive
                 .endpoint(s3Endpoint)
                 .validator(new BinaryMessageValidator())
-//                .payload(testValue)
+                .payload(testValue)
         );
-//        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
 
     }
@@ -125,7 +123,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
                 .endpoint(s3Endpoint)
                 .payload(S3EndpointResponse.DELETE_OBJECT_SUCCESS)
         );
-//        s3AbstractHost.deleteObject(bucket, key);
         s3AbstractHost.deleteBucket(bucket);
 
     }
@@ -147,7 +144,6 @@ public class BasicOperationTests extends TestNGCitrusTestRunner {
                 .payload(S3EndpointResponse.DELETE_BUCKET_SUCCESS)
         );
         s3AbstractHost.deleteBucket(bucket);
-
     }
 
 }

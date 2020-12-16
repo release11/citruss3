@@ -69,12 +69,6 @@ public class S3Message extends DefaultMessage {
         this.bucket = message.getBucket();
         this.key = message.getKey();
         this.setPayload(message.getData());
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ObjectOutputStream os = new ObjectOutputStream(out);
-        os.writeObject(message.getData());
-        byte[] res = out.toByteArray();
-        System.out.println("UNMARSHALLED STRING VALUE:\n" + new String(res) + "\n" +
-                "UNMARSHALLED BYTE ARRAY:\n" + Arrays.toString(res));
     }
 
     /**
