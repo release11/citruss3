@@ -32,7 +32,4 @@ public class S3EndpointResponse {
         return null;
     }
 
-
-
-
 }

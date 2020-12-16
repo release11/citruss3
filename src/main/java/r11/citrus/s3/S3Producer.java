@@ -23,7 +23,6 @@ public class S3Producer implements Producer {
     /**
      * Producer is created by endpoint object and is initialized by it. All necessary data is contained within
      * the given object.
-     *
      * @param s3Endpoint
      */
     public S3Producer(S3Endpoint s3Endpoint) {
@@ -34,7 +33,6 @@ public class S3Producer implements Producer {
      * Method receives message built in citrus test message builder and according to it's parameters,
      * it builds proper aws s3 request. After request is sent and response received, it feeds the response
      * to endpoint object.
-     *
      * @param message
      * @param context
      */
@@ -56,7 +54,6 @@ public class S3Producer implements Producer {
     /**
      * Checks value of S3 operation parameter and chooses request type.
      * After response is received, a response handler class with raw response object is returned.
-     *
      * @param s3Client
      * @param s3Message
      * @return
@@ -91,16 +88,23 @@ public class S3Producer implements Producer {
 
         } else {
             s3Endpoint.setForwardedMessage(s3Message);
-//            ResponseBytes res = s3Client.getObjectAsBytes((GetObjectRequest) request);
             response = null;
         }
         return new S3EndpointResponse(response);
     }
 
+    /**
+     * returns list of a buckets as string
+     * @return
+     */
     private List<String> listBucketsAsString() {
         return listBuckets().stream().map(Bucket::name).collect(Collectors.toList());
     }
 
+    /**
+     * returns collection of bucket names
+     * @return
+     */
     private List<Bucket> listBuckets() {
         ListBucketsRequest listBucketsRequest = ListBucketsRequest.builder().build();
         ListBucketsResponse resp = s3Endpoint.getClient().listBuckets(listBucketsRequest);
@@ -109,7 +113,6 @@ public class S3Producer implements Producer {
 
     /**
      * Returnes the name of the producer
-     *
      * @return
      */
     public String getName() {

@@ -11,6 +11,9 @@ public class S3EndpointBuilder {
     private String accessKey = null;
     private String secretKey = null;
 
+    /**
+     * Default constructor
+     */
     public S3EndpointBuilder() {
     }
 

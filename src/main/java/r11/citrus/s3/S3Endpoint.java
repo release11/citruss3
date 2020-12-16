@@ -20,7 +20,6 @@ public class S3Endpoint extends AbstractEndpoint {
     private String name = getClass().getSimpleName();
     private S3Client client;
     private S3EndpointResponse response;
-    //    private S3Request request;
     private S3Message forwardedMessage;
 
 
@@ -35,36 +34,39 @@ public class S3Endpoint extends AbstractEndpoint {
         return resp;
     }
 
+    /**
+     * Returns forwarded S3Message and deletes the reference.
+     * @return
+     */
     public S3Message retrieveMessage() {
         S3Message m = this.forwardedMessage;
         this.forwardedMessage = null;
         return m;
     }
 
+    /**
+     * Returns boolean if forwarded S3Message exists
+     * @return
+     */
     public boolean hasMessage() {
         return forwardedMessage != null;
     }
 
+    /**
+     * Returns boolean if s3 server response exists
+     * @return
+     */
     public boolean hasResponse() {
         return response != null;
     }
 
+    /**
+     * setter for forwardedMessage
+     * @param forwardedMessage
+     */
     public void setForwardedMessage(S3Message forwardedMessage) {
         this.forwardedMessage = forwardedMessage;
     }
-
-    //    public boolean hasRequest() {
-//        return request != null;
-//    }
-
-//    public S3Request getRequest() {
-//        S3Request req = request;
-//        this.request = null;
-//        return req;
-//    }
-//    public void setRequest(S3Request request) {
-//        this.request = request;
-//    }
 
     /**
      * @param response

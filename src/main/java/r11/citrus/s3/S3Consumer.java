@@ -73,6 +73,13 @@ public class S3Consumer implements Consumer {
         return result;
     }
 
+    /**
+     * Converts S3 response into Object
+     * @param responseBytes
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public static Object responseBytesToObject(ResponseBytes responseBytes) throws IOException, ClassNotFoundException {
         byte[] bytes = responseBytes.asByteArray();
         ByteArrayInputStream in = new ByteArrayInputStream(bytes);
