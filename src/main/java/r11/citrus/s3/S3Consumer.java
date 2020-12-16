@@ -56,7 +56,7 @@ public class S3Consumer implements Consumer {
                 try {
                     result.setPayload(responseBytesToObject(res));
                 } catch (IOException | ClassNotFoundException e) {
-                    e.printStackTrace();
+                    result.setPayload(res.asByteArray());
                 }
                 if (m.isDelete()) {
                     s3Endpoint.getClient().deleteObject(DeleteObjectRequest.builder().bucket(m.getBucket()).key(m.getKey()).build());
