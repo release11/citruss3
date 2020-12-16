@@ -1,4 +1,4 @@
-package r11.citrus.s3.config;
+package r11.citrus.s3;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ public class EndpointConfig {
                 .host("http://localhost:8001")
                 .accessKey("1234")
                 .secretKey("1234")
-                .localBlobPath("./tmp/blobstore")
+                .localBlobPath("./s3-tmp/blobstore")
                 .build();
     }
 

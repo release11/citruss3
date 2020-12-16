@@ -62,7 +62,6 @@ public class S3Message extends DefaultMessage {
      * @throws JAXBException
      */
     public S3Message(String xml) throws JAXBException, IOException {
-        System.out.println("XML:\n"+xml+"\n");
         S3MessageMarshaller messageMarshaller = new S3MessageMarshaller();
         S3Message message = messageMarshaller.unmarshal(xml);
         this.method = message.getMethod();

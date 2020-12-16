@@ -21,9 +21,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>TestInit.java</include>
-                        <include>BasicOperationTests.java</include>
-                        <include>AdvancedOperationTests.java</include>
+                        <include>S3OperationsTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -114,16 +112,8 @@
             <groupId>org.apache.jclouds</groupId>
             <artifactId>jclouds-blobstore</artifactId>
             <version>2.2.1</version>
-            <scope>compile</scope>
+            <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.gaul</groupId>
-            <artifactId>s3proxy</artifactId>
-            <version>1.7.1</version>
-            <scope>compile</scope>
-        </dependency>
-
-
     </dependencies>
 
 
