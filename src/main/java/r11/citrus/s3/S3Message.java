@@ -4,15 +4,15 @@ import com.consol.citrus.message.DefaultMessage;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.model.*;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
@@ -56,13 +56,13 @@ public class S3Message extends DefaultMessage {
 
     /**
      * Constructor that uses xml notation to get all necessary data.
-     * Uses S3MessageMarshaller for unmarshalling of the content.
+     * Uses S3Message.Marshaller for unmarshalling of the content.
      * Constructor is used to reconstruct S3Message object from DefaultMessage object.
      * @param xml
      * @throws JAXBException
      */
     public S3Message(String xml) throws JAXBException, IOException {
-        S3MessageMarshaller messageMarshaller = new S3MessageMarshaller();
+        S3Message.Marshaller messageMarshaller = new S3Message.Marshaller();
         S3Message message = messageMarshaller.unmarshal(xml);
         this.method = message.getMethod();
         this.bucket = message.getBucket();
@@ -92,7 +92,7 @@ public class S3Message extends DefaultMessage {
     @Override
     public Object getPayload() {
         try {
-            S3MessageMarshaller messageMarshaller = new S3MessageMarshaller();
+            S3Message.Marshaller messageMarshaller = new S3Message.Marshaller();
             return messageMarshaller.marshal(this);
         } catch (JAXBException e) {
             e.printStackTrace();
@@ -287,5 +287,44 @@ public class S3Message extends DefaultMessage {
         }
     }
 
+    /**
+     * Class uses Jaxb annotations in S3Message to perfom marshal and unmarshal operations
+     */
+    class Marshaller{
+        private JAXBContext context = JAXBContext.newInstance(S3Message.class);
+
+        /**
+         * Default constructor
+         * @throws JAXBException
+         */
+        public Marshaller() throws JAXBException {
+        }
+
+        /**
+         * Marshals S3Message to xml notation
+         * @param message
+         * @return
+         * @throws JAXBException
+         */
+        public String marshal(S3Message message) throws JAXBException {
+            StringWriter stringWriter = new StringWriter();
+            javax.xml.bind.Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.marshal(message, stringWriter);
+            return stringWriter.toString();
+        }
+
+        /**
+         * Unmarshals xml notation to S3Message object
+         * @param xml
+         * @return
+         * @throws JAXBException
+         */
+        public S3Message unmarshal(String xml) throws JAXBException {
+            StringReader stringReader = new StringReader(xml);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            return (S3Message)unmarshaller.unmarshal(stringReader);
+        }
+    }
 
 }
