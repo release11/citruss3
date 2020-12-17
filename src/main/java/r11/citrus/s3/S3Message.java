@@ -192,8 +192,6 @@ public class S3Message extends DefaultMessage {
                 return CreateBucketRequest.builder().bucket(bucket).build();
             case DELETE_BUCKET:
                 return DeleteBucketRequest.builder().bucket(bucket).build();
-            case LIST_FILES:
-                return ListObjectsV2Request.builder().bucket(bucket).prefix(key).build();
             default:
                 return null;
         }

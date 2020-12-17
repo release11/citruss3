@@ -10,8 +10,7 @@ public enum S3RequestType {
     DELETE,
     GET_DELETE,
     CREATE_BUCKET,
-    DELETE_BUCKET,
-    LIST_FILES;
+    DELETE_BUCKET;
 
     public static final String REQUEST_PUT = "put";
     public static final String REQUEST_PUT_BUCKET_CREATE = "put_bucket_create";
@@ -20,7 +19,6 @@ public enum S3RequestType {
     public static final String REQUEST_GET_DELETE = "get_delete";
     public static final String REQUEST_CREATE_BUCKET = "create_bucket";
     public static final String REQUEST_DELETE_BUCKET = "delete_bucket";
-    public static final String REQUEST_LIST_FILES = "list_files";
 
     /**
      * Translates string input to one of it's enum values.
@@ -44,8 +42,6 @@ public enum S3RequestType {
                 return S3RequestType.DELETE_BUCKET;
             case REQUEST_CREATE_BUCKET:
                 return S3RequestType.CREATE_BUCKET;
-            case REQUEST_LIST_FILES:
-                return S3RequestType.LIST_FILES;
             default:
                 return null;
         }
