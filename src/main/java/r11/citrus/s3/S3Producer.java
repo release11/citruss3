@@ -40,7 +40,7 @@ public class S3Producer implements Producer {
         String xmlPayload = (String) message.getPayload();
         try {
             S3Message s3Message = new S3Message(xmlPayload);
-            S3EndpointResponse response = performRequest(s3Endpoint.getClient(), s3Message);
+            S3Response response = performRequest(s3Endpoint.getClient(), s3Message);
 
             if (response != null) {
                 s3Endpoint.setResponse(response);
@@ -58,7 +58,7 @@ public class S3Producer implements Producer {
      * @param s3Message
      * @return
      */
-    public S3EndpointResponse performRequest(S3Client s3Client, S3Message s3Message) {
+    public S3Response performRequest(S3Client s3Client, S3Message s3Message) {
         Object response;
         S3Request request = s3Message.getS3Request();
         RequestBody body = s3Message.getRequestBody();
@@ -69,28 +69,28 @@ public class S3Producer implements Producer {
                 s3Client.createBucket(CreateBucketRequest.builder().bucket(req.bucket()).build()); //Create bucket if needed
             }
             s3Client.putObject(req, body); //put object to S3
-            response = S3EndpointResponse.PUT_OBJECT_SUCCESS; //write mock response
+            response = S3Response.PUT_OBJECT_SUCCESS; //write mock response
 
         } else if (request instanceof DeleteObjectRequest) {
             s3Client.deleteObject((DeleteObjectRequest) request);
-            response = S3EndpointResponse.DELETE_OBJECT_SUCCESS;
+            response = S3Response.DELETE_OBJECT_SUCCESS;
 
         } else if (request instanceof DeleteBucketRequest) {
             s3Client.deleteBucket((DeleteBucketRequest) request);
-            response = S3EndpointResponse.DELETE_BUCKET_SUCCESS;
+            response = S3Response.DELETE_BUCKET_SUCCESS;
 
         } else if (request instanceof CreateBucketRequest) {
             CreateBucketRequest req = (CreateBucketRequest) request;
             if (!listBucketsAsString().contains(req.bucket())) { //Check if we should create a bucket
                 s3Client.createBucket(CreateBucketRequest.builder().bucket(req.bucket()).build()); //Create bucket if needed
             }
-            response = S3EndpointResponse.CREATE_BUCKET_SUCCESS; //write mock response
+            response = S3Response.CREATE_BUCKET_SUCCESS; //write mock response
 
         } else {
             s3Endpoint.setForwardedMessage(s3Message);
             response = null;
         }
-        return new S3EndpointResponse(response);
+        return new S3Response(response);
     }
 
     /**

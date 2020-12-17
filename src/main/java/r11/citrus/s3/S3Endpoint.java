@@ -19,7 +19,7 @@ public class S3Endpoint extends AbstractEndpoint {
 
     private String name = getClass().getSimpleName();
     private S3Client client;
-    private S3EndpointResponse response;
+    private S3Response response;
     private S3Message forwardedMessage;
 
 
@@ -28,8 +28,8 @@ public class S3Endpoint extends AbstractEndpoint {
      *
      * @return
      */
-    public S3EndpointResponse getResponse() {
-        S3EndpointResponse resp = this.response;
+    public S3Response getResponse() {
+        S3Response resp = this.response;
         this.response = null;
         return resp;
     }
@@ -71,7 +71,7 @@ public class S3Endpoint extends AbstractEndpoint {
     /**
      * @param response
      */
-    public void setResponse(S3EndpointResponse response) {
+    public void setResponse(S3Response response) {
         this.response = response;
     }
 

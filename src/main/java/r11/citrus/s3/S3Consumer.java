@@ -12,7 +12,6 @@ import software.amazon.awssdk.services.s3.model.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
@@ -95,18 +94,18 @@ public class S3Consumer implements Consumer {
      * @param s3Message
      * @return
      */
-    public S3EndpointResponse performRequest(S3Client s3Client, S3Message s3Message) {
+    public S3Response performRequest(S3Client s3Client, S3Message s3Message) {
         Object response = null;
         S3Request request = s3Message.getS3Request();
         RequestBody body = s3Message.getRequestBody();
         if (request instanceof PutObjectRequest) {
             s3Client.putObject((PutObjectRequest) request, body);
-            response = S3EndpointResponse.PUT_OBJECT_SUCCESS;
+            response = S3Response.PUT_OBJECT_SUCCESS;
         }
         if (request instanceof GetObjectRequest) {
             response = s3Client.getObjectAsBytes((GetObjectRequest) request).asByteArray();
         }
-        return new S3EndpointResponse(response);
+        return new S3Response(response);
     }
 
     /**

@@ -51,7 +51,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         //Confirm file upload successful
         receive(receive -> receive
                 .endpoint(s3Endpoint)
-                .payload(S3EndpointResponse.CREATE_BUCKET_SUCCESS)
+                .payload(S3Response.CREATE_BUCKET_SUCCESS)
         );
         s3AbstractHost.deleteBucket(bucket);
 
@@ -73,7 +73,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         //Confirm file upload successful
         receive(receive -> receive
                 .endpoint(s3Endpoint)
-                .payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
+                .payload(S3Response.PUT_OBJECT_SUCCESS)
         );
         s3AbstractHost.deleteBucket(bucket);
 
@@ -116,7 +116,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         //Confirm file delete successful
         receive(receive -> receive
                 .endpoint(s3Endpoint)
-                .payload(S3EndpointResponse.DELETE_OBJECT_SUCCESS)
+                .payload(S3Response.DELETE_OBJECT_SUCCESS)
         );
         s3AbstractHost.deleteBucket(bucket);
 
@@ -136,7 +136,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         //Receive previously requested file from S3
         receive(receive -> receive
                 .endpoint(s3Endpoint)
-                .payload(S3EndpointResponse.DELETE_BUCKET_SUCCESS)
+                .payload(S3Response.DELETE_BUCKET_SUCCESS)
         );
         s3AbstractHost.deleteBucket(bucket);
     }
@@ -155,7 +155,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         //Confirm file upload successful
         receive(receive -> receive
                 .endpoint(s3Endpoint)
-                .payload(S3EndpointResponse.PUT_OBJECT_SUCCESS)
+                .payload(S3Response.PUT_OBJECT_SUCCESS)
         );
         s3AbstractHost.deleteBucket(bucket);
     }
