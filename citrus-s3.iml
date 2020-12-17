@@ -17,6 +17,31 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.findify:s3mock_2.13:0.2.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-library:2.13.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-stream_2.13:2.5.31" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-actor_2.13:2.5.31" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe:config:1.3.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-java8-compat_2.13:0.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-protobuf_2.13:2.5.31" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe:ssl-config-core_2.13:0.3.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-parser-combinators_2.13:1.1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-http_2.13:10.1.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-http-core_2.13:10.1.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-parsing_2.13:10.1.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-xml_2.13:1.3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-collection-compat_2.13:2.1.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.pathikrit:better-files_2.13:3.9.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.scala-logging:scala-logging_2.13:3.9.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-reflect:2.13.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:aws-java-sdk-s3:1.11.294" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:aws-java-sdk-kms:1.11.294" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:aws-java-sdk-core:1.11.294" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: software.amazon.ion:ion-java:1.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.7" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:jmespath-java:1.11.294" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.iq80.leveldb:leveldb:0.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.iq80.leveldb:leveldb-api:0.12" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.consol.citrus:citrus-core:3.0.0-M1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.consol.citrus:citrus-core-spring:3.0.0-M1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.4.RELEASE" level="project" />
@@ -136,37 +161,12 @@
     <orderEntry type="library" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jaxb:txw2:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.11" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.findify:s3mock_2.13:0.2.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-library:2.13.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-stream_2.13:2.5.31" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-actor_2.13:2.5.31" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe:config:1.3.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-java8-compat_2.13:0.9.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-protobuf_2.13:2.5.31" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe:ssl-config-core_2.13:0.3.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-parser-combinators_2.13:1.1.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-http_2.13:10.1.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-http-core_2.13:10.1.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.akka:akka-parsing_2.13:10.1.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-xml_2.13:1.3.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang.modules:scala-collection-compat_2.13:2.1.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.github.pathikrit:better-files_2.13:3.9.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.typesafe.scala-logging:scala-logging_2.13:3.9.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.scala-lang:scala-reflect:2.13.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:aws-java-sdk-s3:1.11.294" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:aws-java-sdk-kms:1.11.294" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:aws-java-sdk-core:1.11.294" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: software.amazon.ion:ion-java:1.0.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.7" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.amazonaws:jmespath-java:1.11.294" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.iq80.leveldb:leveldb:0.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.iq80.leveldb:leveldb-api:0.12" level="project" />
-    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.gaul:s3proxy:1.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: args4j:args4j:2.33" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: ch.qos.logback:logback-classic:1.2.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: ch.qos.logback:logback-core:1.2.3" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.10.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.codehaus.woodstox:stax2-api:4.2" level="project" />

@@ -11,6 +11,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <citrus.version>3.0.0-M1</citrus.version>
     </properties>
 
     <build>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-core</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -63,13 +64,13 @@
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-java-dsl</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-base</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${citrus.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
