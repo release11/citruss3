@@ -1,6 +1,7 @@
 package r11.citrus.s3;
 
 import com.consol.citrus.endpoint.AbstractEndpoint;
+import com.consol.citrus.endpoint.AbstractEndpointConfiguration;
 import com.consol.citrus.messaging.Consumer;
 import com.consol.citrus.messaging.Producer;
 import software.amazon.awssdk.auth.credentials.AwsSessionCredentials;
@@ -87,7 +88,7 @@ public class S3Endpoint extends AbstractEndpoint {
      *
      * @param endpointConfiguration
      */
-    public S3Endpoint(S3EndpointConfiguration endpointConfiguration) throws URISyntaxException {
+    public S3Endpoint(S3Endpoint.Configuration endpointConfiguration) throws URISyntaxException {
         super(endpointConfiguration);
         if (getEndpointConfiguration().isEndpointOverride()) {
             client = S3Client.builder()
@@ -137,8 +138,8 @@ public class S3Endpoint extends AbstractEndpoint {
      * @return
      */
     @Override
-    public S3EndpointConfiguration getEndpointConfiguration() {
-        return (S3EndpointConfiguration) super.getEndpointConfiguration();
+    public S3Endpoint.Configuration getEndpointConfiguration() {
+        return (S3Endpoint.Configuration) super.getEndpointConfiguration();
     }
 
     /**
@@ -224,7 +225,7 @@ public class S3Endpoint extends AbstractEndpoint {
          * @throws URISyntaxException
          */
         public S3Endpoint build() {
-            S3EndpointConfiguration config = new S3EndpointConfiguration();
+            S3Endpoint.Configuration config = new S3Endpoint.Configuration();
             config.setEndpoint(this.endpoint);
             config.setRegion(this.region);
             config.setAccessKey(this.accessKey);
@@ -235,6 +236,91 @@ public class S3Endpoint extends AbstractEndpoint {
                 e.printStackTrace();
             }
             return null;
+        }
+    }
+
+    /**
+     * The class is responsible for containing all required data to create S3Endpoint object.
+     */
+    static class Configuration extends AbstractEndpointConfiguration {
+        private String endpoint = null;
+        private String region;
+        private String accessKey;
+        private String secretKey;
+
+        public Configuration() {
+        }
+
+        /**
+         * Returns information if endpoint is overriden. Example: localstack service.
+         * @return
+         */
+        public boolean isEndpointOverride(){
+            return endpoint != null;
+        }
+
+        /**
+         * Getter for endpoint field
+         * @return
+         */
+        public String getEndpoint() {
+            return endpoint;
+        }
+
+        /**
+         * Setter for endpoint field
+         * @param endpoint
+         */
+        public void setEndpoint(String endpoint) {
+            this.endpoint = endpoint;
+        }
+
+        /**
+         * Getter for region
+         * @return
+         */
+        public String getRegion() {
+            return region;
+        }
+
+        /**
+         * Setter for region
+         * @param region
+         */
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
+        /**
+         * Getter for accessKey
+         * @return
+         */
+        public String getAccessKey() {
+            return accessKey;
+        }
+
+        /**
+         * Setter for accessKey
+         * @param accessKey
+         */
+        public void setAccessKey(String accessKey) {
+            this.accessKey = accessKey;
+        }
+
+        /**
+         * Getter for secretKey
+         * @return
+         */
+        public String getSecretKey() {
+            return secretKey;
+        }
+
+        /**
+         * Setter for secretKey
+         * @param secretKey
+         */
+        public void setSecretKey(String secretKey) {
+            this.secretKey = secretKey;
         }
     }
 
