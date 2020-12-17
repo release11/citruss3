@@ -8,6 +8,7 @@ import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.*;
 
 import javax.xml.bind.JAXBException;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +23,6 @@ public class S3Producer implements Producer {
     /**
      * Producer is created by endpoint object and is initialized by it. All necessary data is contained within
      * the given object.
-     *
      * @param s3Endpoint
      */
     public S3Producer(S3Endpoint s3Endpoint) {
@@ -33,7 +33,6 @@ public class S3Producer implements Producer {
      * Method receives message built in citrus test message builder and according to it's parameters,
      * it builds proper aws s3 request. After request is sent and response received, it feeds the response
      * to endpoint object.
-     *
      * @param message
      * @param context
      */
@@ -41,13 +40,13 @@ public class S3Producer implements Producer {
         String xmlPayload = (String) message.getPayload();
         try {
             S3Message s3Message = new S3Message(xmlPayload);
-            S3EndpointResponse response = performRequest(s3Endpoint.getClient(), s3Message);
+            S3Response response = performRequest(s3Endpoint.getClient(), s3Message);
 
             if (response != null) {
                 s3Endpoint.setResponse(response);
             }
 
-        } catch (JAXBException e) {
+        } catch (JAXBException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -55,12 +54,11 @@ public class S3Producer implements Producer {
     /**
      * Checks value of S3 operation parameter and chooses request type.
      * After response is received, a response handler class with raw response object is returned.
-     *
      * @param s3Client
      * @param s3Message
      * @return
      */
-    public S3EndpointResponse performRequest(S3Client s3Client, S3Message s3Message) {
+    public S3Response performRequest(S3Client s3Client, S3Message s3Message) {
         Object response;
         S3Request request = s3Message.getS3Request();
         RequestBody body = s3Message.getRequestBody();
@@ -71,35 +69,42 @@ public class S3Producer implements Producer {
                 s3Client.createBucket(CreateBucketRequest.builder().bucket(req.bucket()).build()); //Create bucket if needed
             }
             s3Client.putObject(req, body); //put object to S3
-            response = S3EndpointResponse.PUT_OBJECT_SUCCESS; //write mock response
+            response = S3Response.PUT_OBJECT_SUCCESS; //write mock response
 
         } else if (request instanceof DeleteObjectRequest) {
             s3Client.deleteObject((DeleteObjectRequest) request);
-            response = S3EndpointResponse.DELETE_OBJECT_SUCCESS;
+            response = S3Response.DELETE_OBJECT_SUCCESS;
 
         } else if (request instanceof DeleteBucketRequest) {
             s3Client.deleteBucket((DeleteBucketRequest) request);
-            response = S3EndpointResponse.DELETE_BUCKET_SUCCESS;
+            response = S3Response.DELETE_BUCKET_SUCCESS;
 
         } else if (request instanceof CreateBucketRequest) {
             CreateBucketRequest req = (CreateBucketRequest) request;
             if (!listBucketsAsString().contains(req.bucket())) { //Check if we should create a bucket
                 s3Client.createBucket(CreateBucketRequest.builder().bucket(req.bucket()).build()); //Create bucket if needed
             }
-            response = S3EndpointResponse.CREATE_BUCKET_SUCCESS; //write mock response
+            response = S3Response.CREATE_BUCKET_SUCCESS; //write mock response
 
         } else {
             s3Endpoint.setForwardedMessage(s3Message);
-//            ResponseBytes res = s3Client.getObjectAsBytes((GetObjectRequest) request);
             response = null;
         }
-        return new S3EndpointResponse(response);
+        return new S3Response(response);
     }
 
+    /**
+     * returns list of a buckets as string
+     * @return
+     */
     private List<String> listBucketsAsString() {
         return listBuckets().stream().map(Bucket::name).collect(Collectors.toList());
     }
 
+    /**
+     * returns collection of bucket names
+     * @return
+     */
     private List<Bucket> listBuckets() {
         ListBucketsRequest listBucketsRequest = ListBucketsRequest.builder().build();
         ListBucketsResponse resp = s3Endpoint.getClient().listBuckets(listBucketsRequest);
@@ -108,7 +113,6 @@ public class S3Producer implements Producer {
 
     /**
      * Returnes the name of the producer
-     *
      * @return
      */
     public String getName() {

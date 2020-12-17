@@ -11,6 +11,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <citrus.version>3.0.0-M1</citrus.version>
     </properties>
 
     <build>
@@ -21,9 +22,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>TestInit.java</include>
-                        <include>BasicOperationTests.java</include>
-                        <include>AdvancedOperationTests.java</include>
+                        <include>S3OperationsTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -38,7 +37,7 @@
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-core</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -65,13 +64,13 @@
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-java-dsl</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${citrus.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.consol.citrus</groupId>
             <artifactId>citrus-base</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${citrus.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -96,14 +95,19 @@
             <version>2.3.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.gaul/s3proxy -->
         <dependency>
-            <groupId>io.findify</groupId>
-            <artifactId>s3mock_2.13</artifactId>
-            <version>0.2.6</version>
+            <groupId>org.gaul</groupId>
+            <artifactId>s3proxy</artifactId>
+            <version>1.7.1</version>
             <scope>test</scope>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.jclouds</groupId>
+            <artifactId>jclouds-blobstore</artifactId>
+            <version>2.2.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 

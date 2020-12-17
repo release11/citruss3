@@ -1,6 +1,7 @@
 package r11.citrus.s3;
 
 import com.consol.citrus.endpoint.AbstractEndpoint;
+import com.consol.citrus.endpoint.AbstractEndpointConfiguration;
 import com.consol.citrus.messaging.Consumer;
 import com.consol.citrus.messaging.Producer;
 import software.amazon.awssdk.auth.credentials.AwsSessionCredentials;
@@ -19,8 +20,7 @@ public class S3Endpoint extends AbstractEndpoint {
 
     private String name = getClass().getSimpleName();
     private S3Client client;
-    private S3EndpointResponse response;
-    //    private S3Request request;
+    private S3Response response;
     private S3Message forwardedMessage;
 
 
@@ -29,47 +29,50 @@ public class S3Endpoint extends AbstractEndpoint {
      *
      * @return
      */
-    public S3EndpointResponse getResponse() {
-        S3EndpointResponse resp = this.response;
+    public S3Response getResponse() {
+        S3Response resp = this.response;
         this.response = null;
         return resp;
     }
 
+    /**
+     * Returns forwarded S3Message and deletes the reference.
+     * @return
+     */
     public S3Message retrieveMessage() {
         S3Message m = this.forwardedMessage;
         this.forwardedMessage = null;
         return m;
     }
 
+    /**
+     * Returns boolean if forwarded S3Message exists
+     * @return
+     */
     public boolean hasMessage() {
         return forwardedMessage != null;
     }
 
+    /**
+     * Returns boolean if s3 server response exists
+     * @return
+     */
     public boolean hasResponse() {
         return response != null;
     }
 
+    /**
+     * setter for forwardedMessage
+     * @param forwardedMessage
+     */
     public void setForwardedMessage(S3Message forwardedMessage) {
         this.forwardedMessage = forwardedMessage;
     }
 
-    //    public boolean hasRequest() {
-//        return request != null;
-//    }
-
-//    public S3Request getRequest() {
-//        S3Request req = request;
-//        this.request = null;
-//        return req;
-//    }
-//    public void setRequest(S3Request request) {
-//        this.request = request;
-//    }
-
     /**
      * @param response
      */
-    public void setResponse(S3EndpointResponse response) {
+    public void setResponse(S3Response response) {
         this.response = response;
     }
 
@@ -85,7 +88,7 @@ public class S3Endpoint extends AbstractEndpoint {
      *
      * @param endpointConfiguration
      */
-    public S3Endpoint(S3EndpointConfiguration endpointConfiguration) throws URISyntaxException {
+    public S3Endpoint(S3Endpoint.Configuration endpointConfiguration) throws URISyntaxException {
         super(endpointConfiguration);
         if (getEndpointConfiguration().isEndpointOverride()) {
             client = S3Client.builder()
@@ -135,8 +138,8 @@ public class S3Endpoint extends AbstractEndpoint {
      * @return
      */
     @Override
-    public S3EndpointConfiguration getEndpointConfiguration() {
-        return (S3EndpointConfiguration) super.getEndpointConfiguration();
+    public S3Endpoint.Configuration getEndpointConfiguration() {
+        return (S3Endpoint.Configuration) super.getEndpointConfiguration();
     }
 
     /**
@@ -162,8 +165,163 @@ public class S3Endpoint extends AbstractEndpoint {
      *
      * @return
      */
-    public static S3EndpointBuilder builder() {
-        return new S3EndpointBuilder();
+    public static S3Endpoint.Builder builder() {
+        return new S3Endpoint.Builder();
+    }
+
+    /**
+     * The class is responsible for containing all required data to create S3Endpoint object.
+     */
+    static class Builder{
+        private String endpoint = null;
+        private String region = null;
+        private String accessKey = null;
+        private String secretKey = null;
+
+        /**
+         * Overrides default aws uri. Useful when using localstack
+         * @param uri
+         * @return
+         */
+        public S3Endpoint.Builder endpointUri(String uri){
+            this.endpoint = uri;
+            return this;
+        }
+
+        /**
+         * Feeds s3client information about aws region. Region object is being built with Region.of(String region) method
+         * Incorrect region name may throw an exception!
+         * @param region
+         * @return
+         */
+        public S3Endpoint.Builder region(String region){
+            this.region = region;
+            return this;
+        }
+
+        /**
+         * Feeds s3client information about Access Key to build credentials object.
+         * @param accessKey
+         * @return
+         */
+        public S3Endpoint.Builder accessKey(String accessKey){
+            this.accessKey = accessKey;
+            return this;
+        }
+
+        /**
+         * Feeds s3client information about Secret Key to build credentials object.
+         * @param secretKey
+         * @return
+         */
+        public S3Endpoint.Builder secretKey(String secretKey){
+            this.secretKey = secretKey;
+            return this;
+        }
+
+        /**
+         * Creates citrus S3Endpoint
+         * @return
+         * @throws URISyntaxException
+         */
+        public S3Endpoint build() {
+            S3Endpoint.Configuration config = new S3Endpoint.Configuration();
+            config.setEndpoint(this.endpoint);
+            config.setRegion(this.region);
+            config.setAccessKey(this.accessKey);
+            config.setSecretKey(this.secretKey);
+            try {
+                return new S3Endpoint(config);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    /**
+     * The class is responsible for containing all required data to create S3Endpoint object.
+     */
+    static class Configuration extends AbstractEndpointConfiguration {
+        private String endpoint = null;
+        private String region;
+        private String accessKey;
+        private String secretKey;
+
+        public Configuration() {
+        }
+
+        /**
+         * Returns information if endpoint is overriden. Example: localstack service.
+         * @return
+         */
+        public boolean isEndpointOverride(){
+            return endpoint != null;
+        }
+
+        /**
+         * Getter for endpoint field
+         * @return
+         */
+        public String getEndpoint() {
+            return endpoint;
+        }
+
+        /**
+         * Setter for endpoint field
+         * @param endpoint
+         */
+        public void setEndpoint(String endpoint) {
+            this.endpoint = endpoint;
+        }
+
+        /**
+         * Getter for region
+         * @return
+         */
+        public String getRegion() {
+            return region;
+        }
+
+        /**
+         * Setter for region
+         * @param region
+         */
+        public void setRegion(String region) {
+            this.region = region;
+        }
+
+        /**
+         * Getter for accessKey
+         * @return
+         */
+        public String getAccessKey() {
+            return accessKey;
+        }
+
+        /**
+         * Setter for accessKey
+         * @param accessKey
+         */
+        public void setAccessKey(String accessKey) {
+            this.accessKey = accessKey;
+        }
+
+        /**
+         * Getter for secretKey
+         * @return
+         */
+        public String getSecretKey() {
+            return secretKey;
+        }
+
+        /**
+         * Setter for secretKey
+         * @param secretKey
+         */
+        public void setSecretKey(String secretKey) {
+            this.secretKey = secretKey;
+        }
     }
 
 }
