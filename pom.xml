@@ -94,13 +94,6 @@
             <version>2.3.3</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.findify</groupId>
-            <artifactId>s3mock_2.13</artifactId>
-            <version>0.2.6</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.gaul/s3proxy -->
         <dependency>
             <groupId>org.gaul</groupId>
