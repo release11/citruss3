@@ -2,8 +2,6 @@ package r11.citrus.s3;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import r11.citrus.s3.S3Endpoint;
-import r11.citrus.s3.host.S3AbstractHost;
 
 @Configuration
 public class EndpointConfig {

@@ -5,11 +5,6 @@ import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.validation.binary.BinaryMessageValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.*;
-import r11.citrus.s3.S3Endpoint;
-import r11.citrus.s3.S3EndpointResponse;
-import r11.citrus.s3.S3Message;
-import r11.citrus.s3.S3RequestType;
-import r11.citrus.s3.host.S3AbstractHost;
 
 import java.io.IOException;
 

@@ -33,10 +33,10 @@ public class S3Message extends DefaultMessage {
     private Object payload;
 
     /**
-     * Constructor that uses S3MessageBuilder object data.
+     * Constructor that uses S3Message.Builder object data.
      * @param builder
      */
-    public S3Message(S3MessageBuilder builder){
+    public S3Message(S3Message.Builder builder){
         this.method = builder.getMethod();
         this.bucket = builder.getBucket();
         this.key = builder.getKey();
@@ -77,11 +77,11 @@ public class S3Message extends DefaultMessage {
     }
 
     /**
-     * Returns a new instance of S3MessageBuilder.
+     * Returns a new instance of S3Message.Builder.
      * @return
      */
-    public static S3MessageBuilder builder(){
-        return new S3MessageBuilder();
+    public static S3Message.Builder builder(){
+        return new S3Message.Builder();
     }
 
     /**
@@ -214,6 +214,77 @@ public class S3Message extends DefaultMessage {
         if(payload instanceof File)
             return RequestBody.fromFile((File)payload);
         return RequestBody.empty();
+    }
+
+    /**
+     * Class builds an object of S3Message
+     */
+    static class Builder{
+        private S3RequestType method;
+        private String bucket;
+        private String key;
+
+        /**
+         * Initializes method field
+         * @param method
+         * @return
+         */
+        public S3Message.Builder method(S3RequestType method){
+            this.method = method;
+            return this;
+        }
+
+        /**
+         * Initializes bucket field
+         * @param bucket
+         * @return
+         */
+        public S3Message.Builder bucket(String bucket){
+            this.bucket = bucket;
+            return this;
+        }
+
+        /**
+         * Initializes key field
+         * @param key
+         * @return
+         */
+        public S3Message.Builder key(String key){
+            this.key = key;
+            return this;
+        }
+
+        /**
+         * Returns S3Message object
+         * @return
+         */
+        public S3Message build(){
+            return new S3Message(this);
+        }
+
+        /**
+         * Getter for method
+         * @return
+         */
+        protected S3RequestType getMethod() {
+            return method;
+        }
+
+        /**
+         * Getter for bucket
+         * @return
+         */
+        protected String getBucket() {
+            return bucket;
+        }
+
+        /**
+         * Getter for key
+         * @return
+         */
+        protected String getKey() {
+            return key;
+        }
     }
 
 

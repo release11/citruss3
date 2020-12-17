@@ -164,8 +164,78 @@ public class S3Endpoint extends AbstractEndpoint {
      *
      * @return
      */
-    public static S3EndpointBuilder builder() {
-        return new S3EndpointBuilder();
+    public static S3Endpoint.Builder builder() {
+        return new S3Endpoint.Builder();
+    }
+
+    /**
+     * The class is responsible for containing all required data to create S3Endpoint object.
+     */
+    static class Builder{
+        private String endpoint = null;
+        private String region = null;
+        private String accessKey = null;
+        private String secretKey = null;
+
+        /**
+         * Overrides default aws uri. Useful when using localstack
+         * @param uri
+         * @return
+         */
+        public S3Endpoint.Builder endpointUri(String uri){
+            this.endpoint = uri;
+            return this;
+        }
+
+        /**
+         * Feeds s3client information about aws region. Region object is being built with Region.of(String region) method
+         * Incorrect region name may throw an exception!
+         * @param region
+         * @return
+         */
+        public S3Endpoint.Builder region(String region){
+            this.region = region;
+            return this;
+        }
+
+        /**
+         * Feeds s3client information about Access Key to build credentials object.
+         * @param accessKey
+         * @return
+         */
+        public S3Endpoint.Builder accessKey(String accessKey){
+            this.accessKey = accessKey;
+            return this;
+        }
+
+        /**
+         * Feeds s3client information about Secret Key to build credentials object.
+         * @param secretKey
+         * @return
+         */
+        public S3Endpoint.Builder secretKey(String secretKey){
+            this.secretKey = secretKey;
+            return this;
+        }
+
+        /**
+         * Creates citrus S3Endpoint
+         * @return
+         * @throws URISyntaxException
+         */
+        public S3Endpoint build() {
+            S3EndpointConfiguration config = new S3EndpointConfiguration();
+            config.setEndpoint(this.endpoint);
+            config.setRegion(this.region);
+            config.setAccessKey(this.accessKey);
+            config.setSecretKey(this.secretKey);
+            try {
+                return new S3Endpoint(config);
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
 }
