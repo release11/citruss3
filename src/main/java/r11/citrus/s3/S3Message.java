@@ -217,7 +217,7 @@ public class S3Message extends DefaultMessage {
     /**
      * Class builds an object of S3Message
      */
-    static class Builder{
+    public static class Builder{
         private S3RequestType method;
         private String bucket;
         private String key;
@@ -286,7 +286,7 @@ public class S3Message extends DefaultMessage {
     }
 
     /**
-     * Class uses Jaxb annotations in S3Message to perfom marshal and unmarshal operations
+     * Class uses Jaxb annotations in S3Message to perform marshal and unmarshal operations
      */
     class Marshaller{
         private JAXBContext context = JAXBContext.newInstance(S3Message.class);

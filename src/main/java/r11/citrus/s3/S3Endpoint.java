@@ -172,7 +172,7 @@ public class S3Endpoint extends AbstractEndpoint {
     /**
      * The class is responsible for containing all required data to create S3Endpoint object.
      */
-    static class Builder{
+    public static class Builder{
         private String endpoint = null;
         private String region = null;
         private String accessKey = null;
@@ -242,7 +242,7 @@ public class S3Endpoint extends AbstractEndpoint {
     /**
      * The class is responsible for containing all required data to create S3Endpoint object.
      */
-    static class Configuration extends AbstractEndpointConfiguration {
+    public static class Configuration extends AbstractEndpointConfiguration {
         private String endpoint = null;
         private String region;
         private String accessKey;
