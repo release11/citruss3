@@ -192,6 +192,8 @@ public class S3Message extends DefaultMessage {
                 return CreateBucketRequest.builder().bucket(bucket).build();
             case DELETE_BUCKET:
                 return DeleteBucketRequest.builder().bucket(bucket).build();
+            case GET_OBJECTS_LIST:
+                return ListObjectsV2Request.builder().bucket(bucket).build();
             default:
                 return null;
         }
@@ -217,7 +219,7 @@ public class S3Message extends DefaultMessage {
     /**
      * Class builds an object of S3Message
      */
-    static class Builder{
+    public static class Builder{
         private S3RequestType method;
         private String bucket;
         private String key;

@@ -1,12 +1,17 @@
 package r11.citrus.s3;
 
+import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import com.consol.citrus.context.TestContext;
 import com.consol.citrus.dsl.testng.TestNGCitrusTestRunner;
 import com.consol.citrus.validation.binary.BinaryMessageValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Test(testName = "BasicOperation")
 public class S3OperationsTest extends TestNGCitrusTestRunner {
@@ -20,7 +25,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
     private final String testValue = "testValue";
 
     @BeforeTest
-    void startMockS3 (){
+    void startMockS3() {
         try {
             s3AbstractHost.start();
         } catch (Exception e) {
@@ -29,7 +34,7 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
     }
 
     @AfterTest
-    void stopMockS3(){
+    void stopMockS3() {
         try {
             s3AbstractHost.stop();
         } catch (Exception e) {
@@ -78,6 +83,42 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         s3AbstractHost.deleteBucket(bucket);
 
     }
+
+    @CitrusTest
+    public void getObjectsListTest() throws IOException {
+
+        String key1 = "part1/part2/test.txt";
+        String key2 = "part1/part2/test2.txt";
+
+        s3AbstractHost.createBucket(bucket);
+        s3AbstractHost.createObject(bucket, key1, testValue);
+        s3AbstractHost.createObject(bucket, key2, testValue);
+
+        // Get objects list request message from bucket
+        S3Message getList = S3Message.builder().bucket(bucket).method(S3RequestType.GET_OBJECTS_LIST).build();
+
+        //Send list request
+        send(sendMessageBuilder -> sendMessageBuilder
+                .endpoint(s3Endpoint)
+                .message(getList));
+
+        List<String> expected = new ArrayList<>();
+        expected.add(key2);
+        expected.add(key1);
+        Collections.sort(expected);
+        log.info("Expected list: " + expected.toString());
+
+        // Comparison of received list of objects in bucket with the expected
+        receive(receive -> receive
+                .endpoint(s3Endpoint)
+                .messageName("resultList")
+                .validator(new BinaryMessageValidator())
+                .payload(expected.toString())
+        );
+
+        s3AbstractHost.deleteBucket(bucket);
+    }
+
 
     @CitrusTest
     public void getFileTest() throws IOException {
