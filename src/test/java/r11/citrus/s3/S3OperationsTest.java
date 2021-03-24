@@ -111,7 +111,6 @@ public class S3OperationsTest extends TestNGCitrusTestRunner {
         // Comparison of received list of objects in bucket with the expected
         receive(receive -> receive
                 .endpoint(s3Endpoint)
-                .messageName("resultList")
                 .validator(new BinaryMessageValidator())
                 .payload(expected.toString())
         );
